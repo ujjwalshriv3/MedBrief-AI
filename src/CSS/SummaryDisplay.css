@@ -1,0 +1,740 @@
+/* Match app background gradient context and keep minimal spacing */
+.summary-section {
+  padding: 1rem 0 2rem 0; /* minimal gap from previous section */
+  margin-bottom: 6rem; /* increased gap before footer */
+  background: transparent; /* keep page gradient visible */
+}
+
+.summary-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.summary-header h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  background: linear-gradient(135deg, #0891b2 0%, #0e7490 50%, #155e75 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Summary Navigation */
+.summary-navigation {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: #0891b2;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.summary-counter {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* File Info */
+.file-info {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.file-info h4 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #334155;
+  margin: 0;
+}
+
+.summary-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: #f8fafc;
+}
+
+.icon-btn.copied {
+  color: #059669;
+  border-color: #86efac;
+  background: #ecfdf5;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  /* Prevent text shrinking */
+  white-space: nowrap;
+  min-width: fit-content;
+  height: auto;
+  line-height: 1.2;
+  /* Ensure consistent button sizing */
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  /* Prevent any layout shifts */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /* Ensure text stays the same size */
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+}
+
+.download-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-1px) translateZ(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn:active {
+  transform: translateY(0) translateZ(0);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  /* Prevent any font size changes during click */
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+}
+
+.download-btn:focus {
+  outline: 2px solid #0891b2;
+  outline-offset: 2px;
+  /* Prevent any font size changes during focus */
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+}
+
+.download-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: translateZ(0);
+  /* Prevent any font size changes when disabled */
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+}
+
+.download-btn.copied {
+  color: #059669;
+  border-color: #86efac;
+  background: #ecfdf5;
+}
+
+.download-btn svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  /* Prevent any size changes */
+  min-width: 18px;
+  min-height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+}
+
+.download-btn span {
+  flex-shrink: 0;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  /* Prevent any text changes */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Ensure consistent sizing */
+  line-height: 1.2;
+  min-width: fit-content;
+}
+
+.summary-content {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  line-height: 1.6;
+}
+
+.summary-content p {
+  margin: 0 0 0.75rem 0;
+  color: #334155;
+}
+
+.summary-content ul {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.summary-content li {
+  margin-bottom: 0.5rem;
+  color: #334155;
+}
+
+.summary-content b {
+  color: #0891b2;
+  font-weight: 700;
+}
+
+/* Footer actions under the card, aligned right */
+/* Prevent any global font size changes that might affect buttons */
+.summary-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  /* Ensure consistent font sizing */
+  font-size: 1rem;
+}
+
+.summary-footer-actions * {
+  /* Prevent any font size inheritance issues */
+  font-size: inherit;
+}
+
+/* Ensure download buttons maintain their size */
+.summary-footer-actions .download-btn {
+  /* Override any inherited font sizes */
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  /* Prevent any scaling */
+  transform: scale(1) translateZ(0);
+  /* Ensure consistent dimensions */
+  min-height: 44px;
+  min-width: max-content;
+}
+
+/* CSS Reset specifically for download buttons to prevent any external interference */
+.download-btn.no-shrink {
+  /* Reset all properties that might cause issues */
+  all: unset;
+  /* Re-apply only the properties we want */
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  background: #ffffff !important;
+  color: #334155 !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1rem !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 0.875rem !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  min-width: fit-content !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  transform: none !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  /* Prevent any font changes */
+  font-size-adjust: none !important;
+  font-stretch: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  /* Ensure consistent dimensions */
+  min-height: 44px !important;
+  min-width: max-content !important;
+  /* Additional protection against any CSS changes */
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  /* Prevent any scaling or transformations */
+  scale: 1 !important;
+  zoom: 1 !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  /* Prevent any animations that might affect text */
+  animation: none !important;
+  transition: none !important;
+  /* Force consistent text rendering */
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Override any potential CSS that might cause shrinking */
+.download-btn.no-shrink:hover,
+.download-btn.no-shrink:active,
+.download-btn.no-shrink:focus,
+.download-btn.no-shrink:visited {
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  transform: none !important;
+  scale: 1 !important;
+  zoom: 1 !important;
+  /* Maintain hover effects without affecting text */
+  background: #f8fafc !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  /* Prevent any font changes during interactions */
+  font-size-adjust: none !important;
+  font-stretch: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+}
+
+.download-btn.no-shrink:active {
+  background: #f1f5f9 !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+  /* Ensure text stays exactly the same during click */
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  transform: none !important;
+  scale: 1 !important;
+  zoom: 1 !important;
+}
+
+.download-btn.no-shrink:focus {
+  outline: 2px solid #0891b2 !important;
+  outline-offset: 2px !important;
+  /* Prevent any font changes during focus */
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+.download-btn.no-shrink:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  /* Prevent any font changes when disabled */
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+/* Prevent any CSS animations or transitions that might affect text */
+.download-btn.no-shrink,
+.download-btn.no-shrink * {
+  /* Disable all animations and transitions */
+  animation: none !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+  animation-direction: normal !important;
+  animation-fill-mode: none !important;
+  animation-play-state: running !important;
+  animation-timing-function: ease !important;
+  
+  transition: none !important;
+  transition-property: none !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+  transition-timing-function: ease !important;
+  
+  /* Prevent any CSS transforms */
+  transform: none !important;
+  transform-origin: 50% 50% !important;
+  transform-style: flat !important;
+  perspective: none !important;
+  perspective-origin: 50% 50% !important;
+  backface-visibility: hidden !important;
+  
+  /* Prevent any scaling or zooming */
+  scale: 1 !important;
+  zoom: 1 !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+  
+  /* Force consistent text rendering */
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  font-smooth: never !important;
+  
+  /* Prevent any font changes */
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  font-size-adjust: none !important;
+  font-stretch: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+}
+
+/* Override any potential CSS that might cause shrinking during download process */
+.download-btn.no-shrink.downloading,
+.download-btn.no-shrink.processing,
+.download-btn.no-shrink[data-downloading="true"] {
+  /* Force consistent appearance during download */
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  transform: none !important;
+  scale: 1 !important;
+  zoom: 1 !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Prevent any CSS that might be applied during the download process */
+.download-btn.no-shrink:is(:hover, :active, :focus, :visited, :disabled) {
+  /* Ensure text never changes regardless of state */
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  transform: none !important;
+  scale: 1 !important;
+  zoom: 1 !important;
+}
+
+/* Ultimate protection against any font size changes */
+.download-btn.no-shrink,
+.download-btn.no-shrink *,
+.download-btn.no-shrink:hover,
+.download-btn.no-shrink:active,
+.download-btn.no-shrink:focus,
+.download-btn.no-shrink:visited,
+.download-btn.no-shrink:disabled,
+.download-btn.no-shrink.downloading,
+.download-btn.no-shrink.processing,
+.download-btn.no-shrink[data-downloading="true"] {
+  /* Force consistent text properties in ALL states */
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  /* Prevent any transformations */
+  transform: none !important;
+  scale: 1 !important;
+  zoom: 1 !important;
+  /* Prevent any font adjustments */
+  font-size-adjust: none !important;
+  font-stretch: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  /* Prevent any animations or transitions */
+  animation: none !important;
+  transition: none !important;
+  /* Force consistent text rendering */
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Prevent any CSS inheritance issues */
+.download-btn.no-shrink span,
+.download-btn.no-shrink svg {
+  /* Ensure child elements never change */
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  transform: none !important;
+  scale: 1 !important;
+  zoom: 1 !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Sharing Actions */
+.sharing-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.share-btn.whatsapp {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.share-btn.whatsapp:hover {
+  background: #128c7e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.share-btn.email {
+  background: #0891b2;
+  color: #ffffff;
+}
+
+.share-btn.email:hover {
+  background: #0e7490;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
+}
+
+@media (max-width: 768px) {
+  .summary-container {
+    padding: 0 1rem;
+  }
+  
+  .summary-content {
+    padding: 1rem;
+  }
+  
+  .summary-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .summary-navigation {
+    align-self: center;
+  }
+  
+  .summary-footer-actions {
+    justify-content: center;
+  }
+  
+  .sharing-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .share-btn {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .download-btn {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8125rem;
+    min-width: auto;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .share-btn {
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+  }
+  
+  .summary-footer-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .download-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Dark Mode Support */
+body.dark-mode .summary-section {
+  background: transparent;
+}
+
+body.dark-mode .summary-header h2 {
+  background: linear-gradient(135deg, #38bdf8 0%, #0891b2 50%, #0e7490 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.dark-mode .summary-navigation {
+  background: #111111;
+  border-color: #333333;
+}
+
+body.dark-mode .nav-btn {
+  background: #222222;
+  color: #888888;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .nav-btn:hover:not(:disabled) {
+  background: #0891b2;
+  color: #ffffff;
+}
+
+body.dark-mode .summary-counter {
+  color: #cccccc;
+}
+
+body.dark-mode .file-info {
+  background: #111111;
+  border-color: #333333;
+}
+
+body.dark-mode .file-info h4 {
+  color: #ffffff;
+}
+
+body.dark-mode .icon-btn {
+  background: #0891b2 !important;
+  border-color: #0891b2 !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease !important;
+}
+
+body.dark-mode .icon-btn:hover {
+  background: #0e7490 !important;
+  border-color: #0e7490 !important;
+  box-shadow: none !important;
+  transform: translateY(-1px) !important;
+}
+
+body.dark-mode .icon-btn.copied {
+  color: #ffffff !important;
+  border-color: #10b981 !important;
+  background: #10b981 !important;
+  box-shadow: none !important;
+}
+
+body.dark-mode .download-btn {
+  background: #0891b2 !important;
+  border-color: #0891b2 !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease !important;
+}
+
+body.dark-mode .download-btn:hover {
+  background: #0e7490 !important;
+  border-color: #0e7490 !important;
+  box-shadow: none !important;
+  transform: translateY(-1px) !important;
+}
+
+body.dark-mode .download-btn:active {
+  transform: translateY(0) !important;
+  box-shadow: none !important;
+}
+
+body.dark-mode .download-btn.copied {
+  color: #ffffff !important;
+  border-color: #10b981 !important;
+  background: #10b981 !important;
+  box-shadow: none !important;
+}
+
+body.dark-mode .download-btn.copied:hover {
+  background: #059669 !important;
+  border-color: #059669 !important;
+  box-shadow: none !important;
+}
+
+body.dark-mode .summary-content {
+  background: #111111;
+  border-color: #333333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .summary-content p {
+  color: #ffffff;
+}
+
+body.dark-mode .summary-content li {
+  color: #ffffff;
+}
+
+body.dark-mode .summary-content b {
+  color: #38bdf8;
+}
+
+

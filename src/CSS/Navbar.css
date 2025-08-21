@@ -1,0 +1,490 @@
+/* Navbar Component Styles */
+.navbar {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 4px 20px rgba(8, 145, 178, 0.1);
+  border-bottom: 1px solid rgba(8, 145, 178, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+/* Hamburger Toggle (hidden on desktop) */
+.navbar-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #eef2f7;
+  cursor: pointer;
+  margin-left: auto;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+}
+
+.navbar-toggle .bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #4b5563;
+  margin: 3px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+  transform-origin: center;
+}
+
+/* Highlight state when menu is open (keep three lines) */
+.navbar-toggle.open .bar { background: #0891b2; opacity: 1; transform: none; }
+
+/* Press feedback */
+.navbar-toggle:active { transform: scale(0.96); }
+.navbar-toggle:active .bar { transform: scaleX(0.88); }
+.navbar-toggle:focus-visible { outline: 2px solid rgba(8,145,178,0.45); outline-offset: 4px; }
+
+/* Minimalist hamburger button: remove circular background */
+.navbar-toggle {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Ensure dark mode does not add background to hamburger */
+body.dark-mode .navbar-toggle {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Ensure hamburger bars stack vertically */
+.navbar-toggle {
+  flex-direction: column;
+}
+
+/* Optional: slightly larger bars for visibility */
+.navbar-toggle .bar {
+  width: 22px;
+  height: 2px;
+  margin: 3px 0;
+}
+
+/* Navigation Links */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #0891b2;
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  color: #0891b2;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+  border-radius: 2px;
+}
+
+/* Brand Section */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 2px solid rgba(8,145,178,0.2);
+}
+
+.navbar-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(8, 145, 178, 0.4);
+}
+
+/* Logo Image Styles */
+.logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%; /* include full head in circle */
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.05);
+}
+
+.navbar-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.025em;
+}
+
+/* Actions Section */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+/* Mobile controls container (hidden on desktop) */
+.navbar-controls {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+/* Mobile Menu (hidden by default) */
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.open {
+  display: none;
+}
+
+/* Login Button */
+.login-btn {
+  background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
+  letter-spacing: 0.025em;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(8, 145, 178, 0.4);
+  background: linear-gradient(135deg, #0e7490 0%, #155e75 100%);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(8, 145, 178, 0.3);
+}
+
+/* User Profile */
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border: 2px solid rgba(8, 145, 178, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.15);
+}
+
+.profile-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(8, 145, 178, 0.25);
+  border-color: rgba(8, 145, 178, 0.4);
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+}
+
+.profile-icon:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(8, 145, 178, 0.2);
+}
+
+.profile-icon svg {
+  transition: all 0.3s ease;
+}
+
+.profile-icon:hover svg {
+  transform: scale(1.1);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border: 2px solid rgba(8, 145, 178, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.15);
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(8, 145, 178, 0.25);
+  border-color: rgba(8, 145, 178, 0.4);
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(8, 145, 178, 0.2);
+}
+
+.theme-toggle svg {
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover svg {
+  transform: scale(1.1) rotate(15deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1rem;
+    height: 60px;
+  }
+  /* Show hamburger, hide desktop links */
+  .navbar-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem; /* Slightly more gap for better spacing */
+    margin-left: auto;
+  }
+  .navbar-toggle { display: inline-flex; }
+  .navbar-nav { display: none; }
+  .navbar-actions { display: none; }
+  /* Mobile menu styles */
+  .mobile-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(8, 145, 178, 0.1);
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.08);
+    padding: 0.75rem 1rem 1rem;
+    display: none;
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-menu .mobile-menu-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch; /* changed from center to stretch for full width */
+  }
+  .mobile-menu .mobile-menu-section.actions { margin-top: 0.5rem; gap: 0.75rem; }
+  .mobile-menu .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 0.75rem;
+    border-radius: 8px;
+    position: relative;
+    display: block;
+  }
+  .mobile-menu .nav-link::after { content: ''; display: block; height: 2px; width: 0; margin: 4px auto 0; background: linear-gradient(90deg, #0891b2, #0e7490); transition: width 0.2s ease; }
+  .mobile-menu .nav-link:hover::after, .mobile-menu .nav-link.active::after { width: 40px; }
+  .mobile-menu .nav-link:hover { background: transparent; transform: none; color: #0891b2; }
+  .mobile-menu .login-btn { width: auto; align-self: center; padding-left: 1.25rem; padding-right: 1.25rem; }
+  
+  .navbar-nav {
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9375rem;
+    padding: 0.375rem 0.75rem;
+  }
+  
+  .navbar-title {
+    font-size: 1.25rem;
+  }
+  
+  .navbar-logo {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .login-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+  
+  .profile-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .profile-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .theme-toggle svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 0.75rem;
+  }
+  
+  .navbar-nav {
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .navbar-title {
+    font-size: 1.125rem;
+  }
+  
+  .navbar-brand {
+    gap: 0.5rem;
+  }
+  
+  .navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .login-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Animation for logo on page load */
+@keyframes logoFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.navbar-logo {
+  animation: none;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Styles */
+
+body.dark-mode .navbar {
+  background: #000000;
+  border-bottom: 1px solid #333333;
+}
+
+/* Dark mode for hamburger bars */
+body.dark-mode .navbar-toggle .bar { background: #e5e7eb; }
+body.dark-mode .navbar-toggle { background: #111317; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06); }
+
+/* Dark mode for mobile menu */
+body.dark-mode .mobile-menu {
+  background: #000000;
+  border-bottom-color: #222222;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+body.dark-mode .mobile-menu .nav-link:hover { background: #111111; }
+body.dark-mode .mobile-menu .nav-link::after { background: linear-gradient(90deg, #38bdf8, #0891b2); }
+
+body.dark-mode .navbar-title {
+  background: linear-gradient(135deg, #38bdf8 0%, #0891b2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.dark-mode .theme-toggle {
+  background: #111111;
+  border-color: #333333;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background: #222222;
+  border-color: #444444;
+} 
