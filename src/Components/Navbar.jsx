@@ -64,20 +64,31 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Left side - Logo and Brand Name */}
-        <div className="navbar-brand">
-          <div className="navbar-logo">
-            <img 
-              src={logoImage} 
-              alt="MedBrief AI Logo" 
-              className="logo-image"
-            />
+        {/* Mobile layout: hamburger + logo + title + theme toggle */}
+        <div className="mobile-navbar-layout">
+          <button
+            className={`navbar-toggle ${isMenuOpen ? 'open' : ''}`}
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </button>
+          
+          <div className="navbar-brand">
+            <div className="navbar-logo">
+              <img 
+                src={logoImage} 
+                alt="MedBrief AI Logo" 
+                className="logo-image"
+              />
+            </div>
+            <h1 className="navbar-title">MedBrief AI</h1>
           </div>
-          <h1 className="navbar-title">MedBrief AI</h1>
-        </div>
-
-        {/* Mobile controls: theme switch + hamburger (visible on mobile) */}
-        <div className="navbar-controls">
+          
           <div className="theme-toggle" onClick={toggleTheme}>
             {isDarkMode ? (
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,17 +101,18 @@ const Navbar = () => {
               </svg>
             )}
           </div>
-          <button
-            className={`navbar-toggle ${isMenuOpen ? 'open' : ''}`}
-            onClick={toggleMenu}
-            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-menu"
-          >
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </button>
+        </div>
+        
+        {/* Desktop layout - Logo and Brand Name */}
+        <div className="desktop-navbar-brand">
+          <div className="navbar-logo">
+            <img 
+              src={logoImage} 
+              alt="MedBrief AI Logo" 
+              className="logo-image"
+            />
+          </div>
+          <h1 className="navbar-title">MedBrief AI</h1>
         </div>
 
         {/* Center - Navigation Links */}

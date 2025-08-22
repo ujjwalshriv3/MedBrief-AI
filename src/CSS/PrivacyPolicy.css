@@ -30,7 +30,7 @@
 }
 
 /* Content Section */
-.privacy-content { background: #fff; padding: 60px 0 120px; }
+.privacy-content { background: #fff; padding: 60px 0 100px; }
 
 .privacy-container {
   max-width: 1200px;
@@ -53,7 +53,7 @@
 
 @media (max-width: 480px) {
   .privacy-container { padding: 0 1rem; }
-  .privacy-content { padding: 40px 0 80px; }
+  .privacy-content { padding: 40px 0 60px; }
   .privacy-header .header-content h1 { font-size: 1.75rem; }
   .privacy-header .header-content h2 { font-size: 1.125rem; }
 }

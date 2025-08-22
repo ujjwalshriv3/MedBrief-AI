@@ -1,6 +1,6 @@
 /* Upload Section Styles */
 .upload-section {
-  padding: 2rem 0;
+  padding: 2rem 0 100px; /* standardized footer gap */
   background: transparent;
   min-height: auto;
   display: block;
@@ -32,6 +32,8 @@
   font-weight: 700;
   color: #0f172a;
   margin: 0 0 1rem 0;
+  line-height: 1.2;
+  text-align: center;
   background: linear-gradient(135deg, #0891b2 0%, #0e7490 50%, #155e75 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -341,7 +343,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .upload-section {
-    padding: 2rem 0;
+    padding: 2rem 0 60px;
   }
   
   .upload-container {
@@ -381,6 +383,10 @@
 }
 
 @media (max-width: 480px) {
+  .upload-section {
+    padding: 2rem 0 60px;
+  }
+  
   .upload-header h2 {
     font-size: 1.75rem;
   }

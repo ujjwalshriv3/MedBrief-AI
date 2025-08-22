@@ -110,7 +110,7 @@
 /* Know More Section */
 .know-more-section {
   background: #ffffff; /* match white background, remove card-like look */
-  padding: 24px 0 60px; /* reduce top gap above the heading */
+  padding: 10px 0 60px; /* further reduce top gap above the heading */
 }
 
 .know-more-container {
@@ -161,7 +161,7 @@
 /* Achievements Section */
 .achievements-section {
   background: white;
-  padding: 40px 0 120px; /* less space above, more space below for footer gap */
+  padding: 10px 0 100px; /* standardized footer gap */
 }
 
 .achievements-container {
@@ -222,12 +222,20 @@
   .about-content {
     grid-template-columns: 1fr;
     gap: 2rem;
-    text-align: center;
+    text-align: left;
+  }
+  
+  .about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .about-image img {
-    width: 250px;
-    height: 250px;
+    width: 320px;
+    height: 380px;
+    object-fit: contain;
+    transform: none;
   }
   
   .header-content h1 {
@@ -264,14 +272,17 @@
     padding: 0 1rem;
   }
   
-  .about-section,
-  .achievements-section {
+  .about-section {
     padding: 60px 0;
+  }
+  
+  .achievements-section {
+    padding: 5px 0 60px;
   }
   
   /* keep smaller gap above the heading on mobile too */
   .know-more-section {
-    padding: 30px 0 60px;
+    padding: 15px 0 60px;
   }
   
   .header-content h1 {
@@ -286,9 +297,17 @@
     font-size: 1.75rem;
   }
   
+  .about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
   .about-image img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 360px;
+    object-fit: contain;
+    transform: none;
   }
   
   .achievements-grid {

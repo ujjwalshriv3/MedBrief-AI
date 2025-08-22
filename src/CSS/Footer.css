@@ -71,7 +71,7 @@
   font-size: 1.1rem;
   font-weight: 600;
   color: #0f172a;
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 0.75rem 0;
 }
 
 .footer-links-list {
@@ -81,7 +81,7 @@
 }
 
 .footer-links-list li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-link {
@@ -128,7 +128,7 @@
 /* Contact Section */
 .footer-contact { display: flex; flex-direction: column; }
 .contact-list { list-style: none; padding: 0; margin: 0; }
-.contact-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.9rem; }
+.contact-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.6rem; }
 .contact-icon { width: 28px; height: 28px; border-radius: 8px; background-color: #0f172a0d; display: inline-flex; align-items: center; justify-content: center; color: #0891b2; margin-top: 2px; cursor: pointer; }
 .contact-icon:hover { color: #0e7490; }
 .contact-text { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.95rem; color: #64748b; line-height: 1.5; }
@@ -214,20 +214,20 @@ body.dark-mode .footer-bottom::before {
   
   .footer-branding {
     max-width: 100%;
-    text-align: center;
+    text-align: left;
   }
   
   .footer-links,
   .footer-contact,
   .footer-social {
-    text-align: center;
+    text-align: left;
   }
 
   /* Reset extra spacing on small screens */
   .footer-links { margin-left: 0; }
   
   .social-icons {
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 
@@ -259,6 +259,16 @@ body.dark-mode .footer-bottom::before {
   .social-icon {
     width: 40px;
     height: 40px;
+  }
+  
+  /* Reduce gap below email in mobile view */
+  .contact-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Reduce space above divider line in mobile */
+  .footer-main {
+    margin-bottom: 0.75rem;
   }
 }
 

@@ -4,15 +4,19 @@ import logo from '../assets/logo.jpg';
 
 const Hero = () => {
   const scrollToUpload = () => {
-    // Scroll to upload section (you can add an id to your upload section)
+    // Scroll to upload section with offset for better positioning
     const uploadSection = document.getElementById('upload-section');
     if (uploadSection) {
-      uploadSection.scrollIntoView({ behavior: 'smooth' });
+      const offsetTop = uploadSection.offsetTop - 80; // Add 80px offset from top
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
     }
   };
 
   return (
-    <section className="hero">
+    <section className="hero"> 
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-text">

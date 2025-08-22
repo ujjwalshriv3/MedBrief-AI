@@ -1,5 +1,5 @@
 .how-to-use {
-  padding: 5rem 0;
+  padding: 5rem 0 100px; /* standardized footer gap */
   background: transparent;
   position: relative;
   overflow: hidden;
@@ -158,7 +158,7 @@
 
 @media (max-width: 768px) {
   .how-to-use {
-    padding: 4rem 0;
+    padding: 2rem 0 60px;
   }
   
   .how-to-use-heading {
@@ -173,7 +173,7 @@
 
 @media (max-width: 480px) {
   .how-to-use {
-    padding: 3rem 0;
+    padding: 1.5rem 0 60px;
   }
   
   .how-to-use-heading {
