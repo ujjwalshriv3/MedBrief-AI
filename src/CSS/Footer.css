@@ -150,8 +150,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 34px;
+  height: 34px;
   background: transparent; /* brand bg set per icon */
   border: none;
   border-radius: 12px; /* rounded square */
@@ -160,14 +160,14 @@
 }
 
 /* Brand-colored backgrounds with white glyphs */
-.social-icon svg { width: 20px; height: 20px; color: #ffffff; }
+.social-icon svg { width: 16px; height: 16px; color: #ffffff; }
 .social-icon.facebook { background-color: #1877F2; }
 .social-icon.instagram { background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4); }
 .social-icon.linkedin { background-color: #0A66C2; }
 .social-icon.youtube { background-color: #FF0000; }
 
 /* Hover: only scale, no glow/background change */
-.social-icon:hover { transform: scale(1.12); }
+.social-icon:hover { transform: scale(1.11); }
 
 /* Bottom Copyright Section */
 .footer-bottom {

@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: auto;   /* Allow vertical scroll */
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
