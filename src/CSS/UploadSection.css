@@ -1,6 +1,6 @@
 /* Upload Section Styles */
 .upload-section {
-  padding: 2rem 0 100px; /* standardized footer gap */
+  padding: 2rem 0 2rem; /* reduced bottom padding */
   background: transparent;
   min-height: auto;
   display: block;
@@ -343,7 +343,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .upload-section {
-    padding: 2rem 0 60px;
+    padding: 2rem 0 1.5rem; /* reduced for tablet */
   }
   
   .upload-container {
@@ -384,7 +384,7 @@
 
 @media (max-width: 480px) {
   .upload-section {
-    padding: 2rem 0 60px;
+    padding: 2rem 0 1rem; /* minimal for mobile */
   }
   
   .upload-header h2 {
