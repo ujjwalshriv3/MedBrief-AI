@@ -6,8 +6,8 @@ An AI-powered web application that processes medical reports (PDFs and images) a
 
 - **File Upload**: Support for PDF and image files (JPEG, PNG)
 - **AI Summarization**: Powered by Groq API for intelligent medical report analysis
-- **Multiple Formats**: Download summaries as PDF, JPG, or share via WhatsApp/Email
-- **User Authentication**: Secure login/signup with Supabase
+- **Multiple Formats**: Download summaries as PDF, JPG, or copy the text instantly
+- **User Authentication**: Secure login/signup powered by Clerk
 - **Responsive Design**: Modern, mobile-friendly interface
 - **Real-time Processing**: Live status updates during file processing
 
@@ -15,7 +15,7 @@ An AI-powered web application that processes medical reports (PDFs and images) a
 
 ### Frontend
 - React 19 with Vite
-- Supabase for authentication
+- Clerk for authentication
 - HTML2Canvas & jsPDF for file generation
 - PDF.js for PDF previews
 - Modern CSS with responsive design
@@ -89,7 +89,7 @@ NODE_ENV=development
 **Note**: Without a valid Groq API key, the AI summarization features will not work.
 
 ### Supabase Configuration
-The app is pre-configured with Supabase for authentication. Update credentials in `src/supabaseClient.js` if needed.
+Update credentials in `src/supabaseClient.js` if needed.
 
 ## 📱 Usage
 
