@@ -144,7 +144,7 @@ medbrief-ai/
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](./LICENSE) © 2025 [Krishna](https://github.com/krishnasingh34).
 
 ## 🤝 Contributing
 
