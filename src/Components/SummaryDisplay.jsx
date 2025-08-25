@@ -695,6 +695,10 @@ const SummaryDisplay = ({ summaries = [], isSignedIn = true }) => {
             Download as PDF
           </button>
         </div>
+        
+        <div className="summary-note">
+          <p>Note: The summary will be cleared if you refresh the page twice. Please save or download it if you want to keep a copy.</p>
+        </div>
       </div>
     </section>
   );
